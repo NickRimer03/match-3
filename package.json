@@ -1,0 +1,18 @@
+{
+  "name": "match-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickRimer03/match-3.git"
+  },
+  "author": "Nick Rimer",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
+}
