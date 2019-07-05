@@ -94,14 +94,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _src_field__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/field */ "./src/field.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_field__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/field */ \"./src/field.js\");\n/* harmony import */ var _src_draw__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/draw */ \"./src/draw.js\");\n/* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style/style.scss */ \"./style/style.scss\");\n/* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_style_scss__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\nconst field = new _src_field__WEBPACK_IMPORTED_MODULE_0__[\"default\"]([10, 10]).fill();\r\nconsole.log(field.gameField);\r\n\r\nnew _src_draw__WEBPACK_IMPORTED_MODULE_1__[\"default\"](field).draw();\r\n\n\n//# sourceURL=webpack:///./index.js?");
 
+/***/ }),
 
-const field = new _src_field__WEBPACK_IMPORTED_MODULE_0__["default"]([10, 10]);
+/***/ "./src/draw.js":
+/*!*********************!*\
+  !*** ./src/draw.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-console.log(field.gameField);
-
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Draw; });\nconst tokenParams = { width: 32, height: 32 };\r\n\r\nclass Draw {\r\n  constructor(field) {\r\n    this.field = field;\r\n  }\r\n\r\n  static drawToken({ color, w, h }) {\r\n    const token = document.createElement(\"div\");\r\n    token.classList.add(\"token\");\r\n    token.classList.add(`_${color}`);\r\n    token.style.left = w * tokenParams.width + \"px\";\r\n    token.style.top = h * tokenParams.height + \"px\";\r\n    token.textContent = color;\r\n\r\n    return token;\r\n  }\r\n\r\n  draw() {\r\n    for (let w = 0; w < this.field.width; w++) {\r\n      for (let h = 0; h < this.field.height; h++) {\r\n        document.body.appendChild(Draw.drawToken({ color: this.field.gameField[w][h], w, h }));\r\n      }\r\n    }\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack:///./src/draw.js?");
 
 /***/ }),
 
@@ -113,14 +118,30 @@ console.log(field.gameField);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Field; });
-class Field {
-  constructor([w, h]) {
-    this.gameField = new Array(h).fill(0).map(() => new Array(w).fill(0));
-  }
-}
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Field; });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\r\n\r\nclass Field {\r\n  constructor([w, h]) {\r\n    this.maxColors = 5;\r\n    this.gameField = new Array(h).fill(0).map(() => new Array(w).fill(0));\r\n  }\r\n\r\n  fill() {\r\n    this.gameField = this.gameField.map(col => col.map(e => (e === 0 ? Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"getRandomInt\"])(1, this.maxColors) : e)));\r\n\r\n    return this;\r\n  }\r\n\r\n  get width() {\r\n    return this.gameField.length;\r\n  }\r\n\r\n  get height() {\r\n    return this.gameField[0].length;\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack:///./src/field.js?");
 
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/*! exports provided: getRandomInt */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getRandomInt\", function() { return getRandomInt; });\nfunction getRandomInt(min = 0, max = 1) {\r\n  return Math.floor(Math.random() * (max - min + 1)) + min;\r\n}\r\n\n\n//# sourceURL=webpack:///./src/utils.js?");
+
+/***/ }),
+
+/***/ "./style/style.scss":
+/*!**************************!*\
+  !*** ./style/style.scss ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./style/style.scss?");
 
 /***/ })
 

@@ -1,0 +1,30 @@
+$colors: (
+  1: #e18d96,
+  2: #c1cd97,
+  3: #c8b4ba,
+  4: #909090,
+  5: #f3ddb3
+);
+
+body {
+  user-select: none;
+}
+
+.token {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #000;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 10px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 8px;
+
+  @each $idx, $color in $colors {
+    &._#{$idx} {
+      background: $color;
+    }
+  }
+}

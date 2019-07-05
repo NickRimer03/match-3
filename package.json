@@ -12,7 +12,12 @@
   "author": "Nick Rimer",
   "license": "MIT",
   "devDependencies": {
-    "webpack": "^4.32.2",
+    "css-loader": "^3.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "sass": "^1.22.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.2",
     "webpack-cli": "^3.3.2"
   }
 }
